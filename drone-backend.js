@@ -36,7 +36,7 @@ function fly(robot) {
     bot.drone.disableEmergency();
         bot.drone.takeoff();
 
-    after(5*1000, function() {
+   /* after(5*1000, function() {
         bot.drone.forward(0.1);
     });
     after(7*1000, function() {
@@ -107,28 +107,28 @@ function fly(robot) {
         bot.drone.clockwise(0);
     });
 
-
-    after(35*1000, function() {
-        bot.drone.counterClockwise(0.2);
+*/
+    after(5*1000, function() {
+        bot.drone.counterClockwise(0.8);
     });
-    after(37*1000, function() {
+    after(5.2*1000, function() {
         bot.drone.counterClockwise(0);
     });
 
-    after(38*1000, function() {
-        bot.drone.counterClockwise(0.5);
+    after(10*1000, function() {
+        bot.drone.counterClockwise(0.8);
     });
-    after(39*1000, function() {
+    after(11*1000, function() {
         bot.drone.counterClockwise(0);
     });
 
 
 
 
-    after(40*1000, function() {
+    after(15*1000, function() {
         bot.drone.land();
     });
-    after(50*1000, function() {
+    after(20*1000, function() {
         bot.drone.stop();
     });
 
