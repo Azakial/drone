@@ -14,21 +14,25 @@ Cylon.robot()
     .device("nav", {
         driver: "ardrone-nav",
 connection: "ardrone"
-});
-
-bot.nav.on("navdata", function(data) {
-    console.log(data);
-    bot.drone.config('general:navdata_demo', 'TRUE');
-
 })
 
-    .on("ready", fly);
+    .on("ready", fly)
+;
+
     
 // Fly the bot
 function fly(robot) {
 
+    bot = robot;
+
+
+    bot.drone.config('general:navdata_demo', 'TRUE');
+    bot.nav.on("navdata", function(data) {
+        console.log(data);
+
+    })
+
     bot.drone.ftrim();
-        bot = robot;
     bot.drone.disableEmergency();
         bot.drone.takeoff();
 
@@ -124,7 +128,7 @@ function fly(robot) {
     after(40*1000, function() {
         bot.drone.land();
     });
-    after(45*1000, function() {
+    after(50*1000, function() {
         bot.drone.stop();
     });
 
